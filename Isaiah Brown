@@ -1,0 +1,42 @@
+public class AverageAnArray  {
+    
+        // Method to calculate the average of an array of integers
+        public static int average(int[] array) {
+            int sum = 0;
+            for (int num : array) {
+                sum += num;
+            }
+            return sum / array.length; // Integer division
+        }
+    
+        // Method to calculate the average of an array of doubles
+        public static double average(double[] array) {
+            double sum = 0.0;
+            for (double num : array) {
+                sum += num;
+            }
+            return sum / array.length; // Double division
+        }
+    
+        public static void main(String[] args) {
+            // Create an array to store the user input
+            double[] userInput = new double[10];
+            
+            // Create a scanner to get user input
+            java.util.Scanner input = new java.util.Scanner(System.in);
+            
+            System.out.println("Please enter 10 double values:");
+    
+            // Get 10 double values from the user
+            for (int i = 0; i < userInput.length; i++) {
+                System.out.print("Enter value " + (i + 1) + ": ");
+                userInput[i] = input.nextDouble();
+            }
+    
+            // Calculate the average using the overloaded method for double array
+            double avg = average(userInput);
+    
+            // Display the result
+            System.out.println("The average is: " + avg);
+        }
+    }
